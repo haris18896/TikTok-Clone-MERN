@@ -107,17 +107,62 @@ adjusting the width and height of the component to be 100% of the parent contain
 
 to make the video play what we will be using is `ref` which is React JS hook. it's like a pointer, every time you click on a video you are pointing on it to play, so that's what `Ref` is going to do for us.
 
+to `play and pause` the video on click, we have to define a function for that.and that functionality cna be achieved by using `useRef`.
 
+on of doing that is to do it like this
+```js
+// /src/components/video/Video.js
 
+//.......
 
+    const handleVideoPress = () => {
+        // if video is playing, pause it
+        // else play it
+        if (videoRef.current.paused) {
+            videoRef.current.play();
+        } else {
+            videoRef.current.pause();
+        }
+    }
+
+//.....
+```
+
+the other way we will have to use `useState`
+```js
+// /src/components/video/Video.js
+//.....
+    const handleVideoPress = () => {
+        // if video is playing, pause it
+        // else play it
+        if(playing){
+            videoRef.current.pause();
+            setPlaying(false);
+        } else {
+            videoRef.current.play();
+            setPlaying(true);
+        }
+    }
+//.....
+//.....
+```
+
+we can also add a button to that function.and for that we will have to use `material ui`
+```sh
+npm install @mui/material
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @mui/icons-material
+
+```
 
 ---
     Steps:
     1. make a container for the video to be contained, and give it a height of 800px
     2. adjust the width and height of the component to be 100% of the container
     3. to make the video play we will be using `ref`
-    4. 
-    5. 
+    4. add an `onClick` handle called `handleVideoPress`
+    5. add a function if the video is playing, pause it, else play it, also add a button from material UI.
     6. 
     7. 
     8. 
