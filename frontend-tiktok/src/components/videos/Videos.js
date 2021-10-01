@@ -1,5 +1,8 @@
 import React, { useRef, useState } from 'react'
-import './Videos.css'
+import './Videos.css';
+import VideoFooter from '../videoFooter/VideoFooter';
+import VideoSidebar from '../videoSidebar/VideoSidebar';
+
 
 function Videos() {
 
@@ -7,8 +10,6 @@ function Videos() {
     const [playing, setPlaying] = useState(false);
 
     const handleVideoPress = () => {
-        // if video is playing, pause it
-        // else play it
         if(playing){
             videoRef.current.pause();
             setPlaying(false);
@@ -28,13 +29,13 @@ function Videos() {
             loop
             ref={videoRef}
             src="https://player.vimeo.com/external/544599561.hd.mp4?s=58bcde0efb9df0a0b3208841050355c843db3e9f&profile_id=172&oauth2_token_id=57447761"
-
             >
             </video>
 
             {/* video Footer */}
-
+            <VideoFooter />
             {/* Video side bar */}
+            <VideoSidebar />
         </div>
     )
 }

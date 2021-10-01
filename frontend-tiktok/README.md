@@ -156,6 +156,54 @@ npm install @mui/icons-material
 
 ```
 
+```js
+// /src/components/video/Video.js
+import React, { useRef, useState } from 'react'
+import './Videos.css';
+import VideoFooter from '../videoFooter/VideoFooter';
+import VideoSidebar from '../videoSidebar/VideoSidebar';
+
+
+function Videos() {
+
+    const videoRef = useRef(null);
+    const [playing, setPlaying] = useState(false);
+
+    const handleVideoPress = () => {
+        if(playing){
+            videoRef.current.pause();
+            setPlaying(false);
+        } else {
+            videoRef.current.play();
+            setPlaying(true);
+        }
+    }
+
+    return (
+        <div className="video">
+            <video
+            onClick={handleVideoPress}
+            // controls
+            // autoplay
+            className="video__player"
+            loop
+            ref={videoRef}
+            src="https://player.vimeo.com/external/544599561.hd.mp4?s=58bcde0efb9df0a0b3208841050355c843db3e9f&profile_id=172&oauth2_token_id=57447761"
+            >
+            </video>
+
+            {/* video Footer */}
+            <VideoFooter />
+            {/* Video side bar */}
+            <VideoSidebar />
+        </div>
+    )
+}
+
+export default Videos
+```
+
+
 ---
     Steps:
     1. make a container for the video to be contained, and give it a height of 800px
@@ -163,7 +211,5 @@ npm install @mui/icons-material
     3. to make the video play we will be using `ref`
     4. add an `onClick` handle called `handleVideoPress`
     5. add a function if the video is playing, pause it, else play it, also add a button from material UI.
-    6. 
-    7. 
-    8. 
+
 
