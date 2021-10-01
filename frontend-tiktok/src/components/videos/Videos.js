@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import './Videos.css';
 import VideoFooter from '../videoFooter/VideoFooter';
 import VideoSidebar from '../videoSidebar/VideoSidebar';
+import IconButton from '@mui/material/IconButton';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 
 function Videos() {
@@ -22,7 +24,7 @@ function Videos() {
     return (
         <div className="video">
             <video
-            onClick={handleVideoPress}
+            // onClick={handleVideoPress}
             // controls
             // autoplay
             className="video__player"
@@ -32,9 +34,16 @@ function Videos() {
             >
             </video>
 
-            {/* video Footer */}
+            {/* <div className="video__button" >
+                <IconButton
+                className="video__play__button"
+                onClick={handleVideoPress}
+                >
+                    <PlayCircleIcon  />
+                </IconButton>
+            </div> */}
+
             <VideoFooter />
-            {/* Video side bar */}
             <VideoSidebar />
         </div>
     )
