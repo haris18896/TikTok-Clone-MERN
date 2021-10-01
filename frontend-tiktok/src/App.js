@@ -3,13 +3,14 @@ import Videos from './components/videos/Videos';
 
 function App() {
   return (
-    <div className="App">
-      <h1>tiktok</h1>
+    <div className="app">
 
       <div className="app__videos">
         <Videos />
         <Videos />
+        <Videos />
       </div>
+      
     </div>
   );
 }
