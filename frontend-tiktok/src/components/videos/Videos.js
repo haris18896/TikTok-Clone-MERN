@@ -24,7 +24,7 @@ function Videos() {
     return (
         <div className="video">
             <video
-            // onClick={handleVideoPress}
+            onClick={handleVideoPress}
             // controls
             // autoplay
             className="video__player"
