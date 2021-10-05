@@ -2,11 +2,11 @@ import React, { useRef, useState } from 'react'
 import './Videos.css';
 import VideoFooter from '../videoFooter/VideoFooter';
 import VideoSidebar from '../videoSidebar/VideoSidebar';
-import IconButton from '@mui/material/IconButton';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+// import IconButton from '@mui/material/IconButton';
+// import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 
-function Videos() {
+function Videos({ url,channel, description, song, likes, shares, messages }) {
 
     const videoRef = useRef(null);
     const [playing, setPlaying] = useState(false);
@@ -26,11 +26,11 @@ function Videos() {
             <video
             onClick={handleVideoPress}
             // controls
-            // autoplay
+            autoPlay
             className="video__player"
             loop
             ref={videoRef}
-            src="https://player.vimeo.com/external/544599561.hd.mp4?s=58bcde0efb9df0a0b3208841050355c843db3e9f&profile_id=172&oauth2_token_id=57447761"
+            src={url}
             >
             </video>
 
@@ -43,8 +43,8 @@ function Videos() {
                 </IconButton>
             </div> */}
 
-            <VideoFooter />
-            <VideoSidebar />
+            <VideoFooter channel={channel} description={description} song={song}   />
+            <VideoSidebar likes={likes} shares={shares} messages={messages} />
         </div>
     )
 }
