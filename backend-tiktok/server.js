@@ -45,7 +45,7 @@ app.post('/v2/posts/', (req, res) => {
 })
 
 app.get('/v2/posts/', (req, res) => {
-    Videos.find({}, (err, data) => {
+    Videos.find((err, data) => {
         if(err){
             res.status(500).send(err)
         }else{
