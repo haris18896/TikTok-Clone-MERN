@@ -1,11 +1,12 @@
 {
   "name": "backend-tiktok",
   "version": "1.0.0",
-  "description": "type the below command, this command will start setting up our NodeJs, package.json file. and then answer the questions to complete the settings.\r ```sh\r npm init\r ```",
+  "description": "tiktok backend with Node js",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start" : "node server.js"
   },
   "author": "haris18896",
   "license": "ISC",
