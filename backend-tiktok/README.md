@@ -334,6 +334,26 @@ app.use((req, res, next) => {
 8. deploy to heroku
 
 
+## `Deploy to Heroku`
+
+first install heroku cli.
+
+open the `Terminal` and install heroku cli outside the master branch
+`curl https://cli-assets.heroku.com/install.sh | sh`
+
+1. install heroku cli
+2. `curl https://cli-assets.heroku.com/install.sh | sh`
+3. `git init`
+4. `heroku git:remote -a bknd-tiktok`
+5. "delete package.lock.json"
+6. `heroku run npm install`
+7. `git add .`
+8. `git commit -am "deploying"`
+9. `heroku logs --tail`
+10. `git push heroku master`
+11. Go to the `heroku.com` -> settings -> find `Domains`, and click on the link that says 'your app can be found here' that's our backend link.
+
+
 
 
 
